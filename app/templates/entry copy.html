@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block app_content %}
+    <div class = "container">
+        <h1>New Entry</h1>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.entry.label }}<br>
+                {{ form.entry(size=32) }}
+                {% for error in form.entry.errors %}
+                <span style="color: red;">  [{{ error }}]  </span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.project.label }}<br>
+                {{ form.project(size=32) }}
+            </p>
+
+            <p>
+                {{ form.notes.label }}<br>
+                {{ form.notes(size=32) }}
+            </p>
+
+            <p>
+                {{ form.save.label }}
+                {{ form.save(size=32) }}
+            </p>
+            
+        </form>
+    </div>
+    <div>
+        <table>
+            <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Entry</th>
+                  <th>Project</th>
+                  <th>Notes</th>
+              </tr>
+              </thead>    
+              <tbody>
+               {% for row in data %}    
+                      <tr>
+                          <td>{{row.id}}</td>
+                          <td>{{row.entry}}</td>
+                          <td>{{row.project}}</td>
+                          <td>{{row.notes}}</td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+    </div>
+
+
+  
+{% endblock %}

@@ -22,8 +22,10 @@ def index():
         db.session.add(entry)
         db.session.commit()
         return redirect(url_for('index'))
-        
+    
+    entries = Entry.query.all()
 
-    return render_template('entry.html', form=form)
+
+    return render_template('entry.html', form=form, data = entries)
 
     

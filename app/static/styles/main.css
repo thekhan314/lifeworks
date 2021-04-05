@@ -1,0 +1,11 @@
+#entryform {
+    width:33%;
+    float:left;
+    
+}
+
+#table {
+    width:66%;
+    float: right;
+    background-color: aqua;
+}
