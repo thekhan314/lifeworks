@@ -38,4 +38,10 @@ def projects():
 
     return render_template('projects.html', projs = all_projects)
 
+@app.route('/projects/<proj>', methods = ['GET','POST'])
+def project(proj):
+
+    data = Entry.query.filter(Entry.project == proj)
+    return render_template('projectdeets.html', data = data)
+
     

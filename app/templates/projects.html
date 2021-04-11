@@ -3,32 +3,13 @@
 {% block app_content %}
     <div id= "entryform">
         {% for proj in projs %}
-        <div>{{proj}}</div>
+        <div><a href="/"> {{proj}} </a></div>
         {% endfor %}
     </div>
-    <div id = "table">
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                  <th>ID</th>
-                  <th>Entry</th>
-                  <th>Project</th>
-                  <th>Notes</th>
-              </tr>
-              </thead>    
-              <tbody>
-               {% for row in data %}    
-                      <tr>
-                          <td>{{row.id}}</td>
-                          <td>{{row.entry}}</td>
-                          <td>{{row.project}}</td>
-                          <td>{{row.notes}}</td>
-                      </tr>
-                  {% endfor %}
-              </tbody>
-          </table>
-    </div>
 
+    <div id = "table">
+    {% block proj_deets %}{% endblock %}
+    </div>
 
   
 {% endblock %}

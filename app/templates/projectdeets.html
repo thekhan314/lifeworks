@@ -1,0 +1,23 @@
+{% extends "projects.html" %}
+
+{% block proj_deets %}
+    <table class="table table-hover">
+        <thead>
+          <tr>
+              <th>ID</th>
+              <th>Entry</th>
+              <th>Notes</th>
+          </tr>
+          </thead>    
+          <tbody>
+           {% for row in data %}    
+                  <tr>
+                      <td>{{row.id}}</td>
+                      <td>{{row.entry}}</td>
+                      <td>{{row.notes}}</td>
+                  </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+
+{% endblock %}
