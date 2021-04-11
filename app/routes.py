@@ -28,4 +28,14 @@ def index():
 
     return render_template('entry.html', form=form, data = entries)
 
+@app.route('/projects', methods = ['GET','POST'])
+def projects():
+
+    
+    proj_query = db.session.query(Entry.project.distinct().label('project'))
+    all_projects = [proj.project for proj in proj_query.all()]
+
+
+    return render_template('projects.html', projs = all_projects)
+
     
