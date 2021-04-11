@@ -3,7 +3,7 @@
 {% block app_content %}
     <div id= "entryform">
         {% for proj in projs %}
-        <div><a href="/"> {{proj}} </a></div>
+        <div><a href="{{ url_for('project',proj=proj)}}"> {{proj}} </a></div>
         {% endfor %}
     </div>
 
